@@ -61,7 +61,7 @@
         content="https://spartanfitness.com.ar/">
 
     <meta property="og:image"
-        content="https://TU-DOMINIO.com/og-image.jpg">
+        content="https://spartanfitness.com.ar/og-image.jpg">
 
     <meta property="og:image:alt"
         content="Spartan Fitness Store - Suplementos deportivos">
@@ -530,72 +530,6 @@
 
 
         /* =========================================================
-        CARRUSEL DE COMBOS
-        ========================================================= */
-
-        #combo-carousel {
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        #combo-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        #combo-carousel > * {
-            flex-shrink: 0;
-            width: 85%;
-            transition:
-                transform .35s ease,
-                box-shadow .35s ease;
-        }
-
-        #combo-carousel > *:hover {
-            transform: translateY(-8px);
-        }
-
-
-        /* =========================================================
-        TABLET
-        ========================================================= */
-
-        @media (min-width: 640px) {
-
-            #combo-carousel > * {
-                width: 48%;
-            }
-
-        }
-
-
-        /* =========================================================
-        TABLET GRANDE
-        ========================================================= */
-
-        @media (min-width: 768px) {
-
-            #combo-carousel > * {
-                width: 340px;
-            }
-
-        }
-
-
-        /* =========================================================
-        DESKTOP
-        ========================================================= */
-
-        @media (min-width: 1024px) {
-
-            #combo-carousel > * {
-                width: 360px;
-            }
-
-        }
-
-
-        /* =========================================================
         ACCESIBILIDAD
         ========================================================= */
 
@@ -616,12 +550,797 @@
 
         }
 
-    </style>
+
+        /* =========================================================
+        RESPONSIVE AVANZADO — SPARTAN FITNESS
+        Optimizado para:
+        320px+ teléfonos pequeños
+        375/390/430px teléfonos medianos y grandes
+        tablets 640/768/820/1024px
+        laptops y desktop 1280px+
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        img,
+        svg,
+        video,
+        canvas {
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            max-width: 100%;
+            font: inherit;
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Contenedores: nunca permiten que el contenido provoque
+           scroll horizontal en pantallas estrechas. */
+        section,
+        header,
+        footer,
+        main,
+        aside {
+            max-width: 100%;
+        }
+
+        /* HERO */
+        #inicio {
+            width: 100%;
+            min-width: 0;
+        }
+
+        #inicio > img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+        }
+
+        #inicio h1 {
+            overflow-wrap: anywhere;
+        }
+
+        #inicio p {
+            overflow-wrap: break-word;
+        }
+
+        /* PRODUCTOS */
+        #productos {
+            width: 100%;
+        }
+
+        #product-grid {
+            width: 100%;
+            min-width: 0;
+        }
+
+        #product-grid > * {
+            min-width: 0;
+            width: 100%;
+        }
+
+        #product-grid img {
+            max-width: 100%;
+        }
+
+        /* CALCULADORA */
+        #calculadora,
+        #calculadora > div,
+        #calculadora .border {
+            min-width: 0;
+        }
+
+        #calculadora input,
+        #calculadora select,
+        #calculadora button,
+        #calculadora a {
+            min-width: 0;
+        }
+
+        #calculadora h1,
+        #calculadora h2,
+        #calculadora h3,
+        #calculadora p {
+            overflow-wrap: break-word;
+        }
+
+        #resultado {
+            min-width: 0;
+        }
+
+        #resultado > div {
+            min-width: 0;
+        }
+
+        #resultado h3 {
+            overflow-wrap: anywhere;
+        }
+
+        /* CARRITO */
+        #cartPanel {
+            width: 100%;
+            max-width: min(100vw, 480px);
+        }
+
+        #cartItems {
+            min-width: 0;
+            overflow-x: hidden;
+        }
+
+        #cartItems > * {
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        /* BOTÓN WHATSAPP FLOTANTE */
+        body > a[aria-label="Contactar por WhatsApp"] {
+            right: max(14px, env(safe-area-inset-right));
+            bottom: max(14px, env(safe-area-inset-bottom));
+        }
+
+        /* TELÉFONOS MUY PEQUEÑOS: 320–374px */
+        @media (max-width: 374px) {
+
+            #navbar > div {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            #navbar > div > div:first-child {
+                min-height: 72px;
+                gap: 8px;
+            }
+
+            #navbar a.flex.items-center {
+                gap: 6px;
+            }
+
+            #navbar a.flex.items-center img {
+                height: 48px;
+                max-width: 82px;
+            }
+
+            #navbar .flex.items-center.gap-2 {
+                gap: 6px;
+            }
+
+            #mobileMenuButton,
+            #cartButton {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+            }
+
+            #cartButton {
+                padding-left: 9px;
+                padding-right: 9px;
+            }
+
+            #cartCount {
+                min-width: 20px;
+                height: 20px;
+                font-size: 10px;
+            }
+
+            #inicio .max-w-\[1600px\] {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            #inicio .min-h-\[260px\] {
+                min-height: 330px;
+                padding-top: 38px;
+                padding-bottom: 38px;
+            }
+
+            #inicio h1 {
+                font-size: clamp(2.35rem, 12vw, 3rem);
+                line-height: .92;
+            }
+
+            #inicio p {
+                font-size: .875rem;
+                line-height: 1.55;
+                margin-top: 18px;
+            }
+
+            #inicio .mt-8 {
+                margin-top: 22px;
+            }
+
+            #inicio a {
+                min-width: 0;
+                width: 100%;
+                padding: 13px 16px;
+            }
+
+            #productos {
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
+
+            #productos h2 {
+                font-size: clamp(2rem, 10vw, 2.5rem);
+                line-height: 1;
+            }
+
+            #productos .mb-10 {
+                margin-bottom: 28px;
+            }
+
+            #product-grid {
+                gap: 16px;
+            }
+
+            #calculadora {
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
+
+            #calculadora .rounded-\[2\.5rem\] {
+                border-radius: 1.5rem;
+            }
+
+            #calculadora .p-10,
+            #calculadora .md\:p-14 {
+                padding: 24px 16px;
+            }
+
+            #calculadora .px-6.sm\:px-10.md\:px-14 {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            #calculadora .p-6.sm\:p-10 {
+                padding: 18px 14px;
+            }
+
+            #calculadora h2 {
+                font-size: clamp(2rem, 10vw, 2.8rem);
+                line-height: 1;
+            }
+
+            #calculadora input,
+            #calculadora select {
+                padding: 15px 14px;
+                font-size: 16px;
+            }
+
+            #calculadora #btnCalcular {
+                padding-top: 17px;
+                padding-bottom: 17px;
+            }
+
+            #resultado {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            #resultado h2 {
+                font-size: clamp(1.9rem, 9vw, 2.5rem);
+                line-height: 1;
+            }
+
+            #resultado .grid {
+                gap: 14px;
+            }
+
+            #resultado .grid > div {
+                padding: 20px;
+                border-radius: 1.5rem;
+            }
+
+            #resultado h3 {
+                font-size: clamp(2.1rem, 11vw, 3rem);
+            }
+
+            #whatsapp {
+                font-size: .9rem;
+                padding: 17px 14px;
+            }
+
+            #cartPanel {
+                max-width: 100vw;
+            }
+
+            #cartPanel > div {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            #cartItems {
+                padding: 14px;
+            }
+
+            body > a[aria-label="Contactar por WhatsApp"] {
+                width: 54px;
+                height: 54px;
+            }
+
+            body > a[aria-label="Contactar por WhatsApp"] i {
+                font-size: 1.55rem;
+            }
+
+            footer .max-w-7xl {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+        }
+
+        /* TELÉFONOS: 375–639px */
+        @media (min-width: 375px) and (max-width: 639px) {
+
+            #inicio .min-h-\[260px\] {
+                min-height: 390px;
+            }
+
+            #inicio h1 {
+                font-size: clamp(2.7rem, 11vw, 4rem);
+            }
+
+            #productos {
+                padding-top: 76px;
+                padding-bottom: 76px;
+            }
+
+            #calculadora {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            #calculadora .p-10,
+            #calculadora .md\:p-14 {
+                padding: 30px 20px;
+            }
+
+            #calculadora .px-6.sm\:px-10.md\:px-14 {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            #resultado {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+        }
+
+        /* TABLETS PEQUEÑAS / TELÉFONOS GRANDES: 640–767px */
+        @media (min-width: 640px) and (max-width: 767px) {
+
+            #inicio .min-h-\[260px\] {
+                min-height: 430px;
+            }
+
+            #inicio h1 {
+                font-size: clamp(3.4rem, 9vw, 5rem);
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            #calculadora .p-10 {
+                padding: 36px;
+            }
+
+            #calculadora .px-6 {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+
+        /* TABLETS: 768–1023px */
+        @media (min-width: 768px) and (max-width: 1023px) {
+
+            #navbar > div {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            #inicio .min-h-\[260px\] {
+                min-height: 500px;
+            }
+
+            #inicio h1 {
+                font-size: clamp(4rem, 8vw, 5.5rem);
+            }
+
+            #productos {
+                padding-left: 28px;
+                padding-right: 28px;
+            }
+
+            #calculadora {
+                padding-left: 28px;
+                padding-right: 28px;
+            }
+
+            #calculadora .p-10 {
+                padding: 42px;
+            }
+        }
+
+        /* DESKTOP: evitar que textos o tarjetas se estiren demasiado */
+        @media (min-width: 1024px) {
+
+            #inicio p {
+                max-width: 34rem;
+            }
+
+            #product-grid > * {
+                min-width: 0;
+            }
+
+            #calculadora input,
+            #calculadora select,
+            #calculadora button {
+                width: 100%;
+            }
+        }
+
+        /* PANTALLAS GRANDES: aprovecha el espacio sin deformar contenido */
+        @media (min-width: 1536px) {
+
+            #inicio .min-h-\[260px\] {
+                min-height: 480px;
+            }
+
+            #productos {
+                max-width: 1500px;
+            }
+        }
+
+        /* ORIENTACIÓN HORIZONTAL EN CELULARES:
+           evita que el hero ocupe una altura exagerada. */
+        @media (max-width: 900px) and (orientation: landscape) {
+
+            #inicio .min-h-\[260px\] {
+                min-height: 360px;
+            }
+
+            #inicio {
+                min-height: 360px;
+            }
+
+            #inicio h1 {
+                font-size: clamp(2.6rem, 7vw, 4rem);
+            }
+
+            #inicio p {
+                margin-top: 12px;
+            }
+
+            #inicio .mt-8 {
+                margin-top: 16px;
+            }
+
+            #inicio a {
+                padding-top: 11px;
+                padding-bottom: 11px;
+            }
+        }
+
+        /* PANTALLAS CON NOTCH / SAFE AREA */
+        @supports (padding: max(0px)) {
+
+            #navbar > div {
+                padding-left: max(1rem, env(safe-area-inset-left));
+                padding-right: max(1rem, env(safe-area-inset-right));
+            }
+
+            #cartPanel {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+
+        /* Evita que elementos largos del carrito o productos
+           rompan el ancho del dispositivo. */
+        .break-anywhere,
+        #cartItems *,
+        #product-grid * {
+            overflow-wrap: anywhere;
+        }
+
+        /* Accesibilidad táctil */
+        @media (pointer: coarse) {
+
+            #mobileMenuButton,
+            #cartButton,
+            #closeCart,
+            .quantity-btn,
+            .remove-cart-btn {
+                min-width: 44px;
+                min-height: 44px;
+            }
+
+            #mobileMenu a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+    
+/* =========================================================
+   RESPONSIVE FINAL — HERO + CALCULADORA
+   Corrección definitiva para teléfonos y tablets
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+#inicio {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#inicio > img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    /* Elimina los bordes negros del object-contain */
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+#inicio > div.relative {
+    min-height: inherit;
+}
+
+
+/* =========================================================
+   TÍTULOS DE LA CALCULADORA
+   Evita que el texto sobresalga del marco
+   ========================================================= */
+
+#calculadora h2,
+#resultado h2 {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+}
+
+
+/* =========================================================
+   TELÉFONOS
+   320px — 767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    #inicio {
+        min-height: clamp(300px, 50vw, 430px);
+    }
+
+    #inicio > img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+
+    /* Título principal de la calculadora */
+    #calculadora h2 {
+        font-size: clamp(1.35rem, 7vw, 2.25rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.025em;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        hyphens: auto;
+    }
+
+
+    /* Título "Tu Resultado Spartan" */
+    #resultado h2 {
+        font-size: clamp(1.35rem, 7vw, 2.25rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.025em;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        hyphens: auto;
+    }
+
+
+    /* Evita que otras clases de Tailwind provoquen
+       desbordamiento en los títulos */
+    #calculadora .text-4xl,
+    #calculadora .text-5xl,
+    #resultado .text-4xl,
+    #resultado .text-5xl {
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+
+    #calculadora .max-w-7xl {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+
+    #calculadora input,
+    #calculadora select,
+    #calculadora button {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS MUY PEQUEÑOS
+   320px — 374px
+   ========================================================= */
+
+@media (max-width: 374px) {
+
+    #inicio {
+        min-height: 300px;
+    }
+
+    #inicio > img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+
+    #calculadora h2,
+    #resultado h2 {
+        font-size: 1.3rem !important;
+        line-height: 1.08 !important;
+
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        hyphens: auto;
+    }
+
+}
+
+
+/* =========================================================
+   TABLETS
+   768px — 1023px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    #inicio {
+        min-height: clamp(380px, 52vw, 540px);
+    }
+
+    #inicio > img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+
+    #calculadora h2,
+    #resultado h2 {
+        font-size: clamp(2rem, 4.5vw, 3rem) !important;
+        line-height: 1.08 !important;
+
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        hyphens: auto;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1024px) {
+
+    #inicio > img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+    #calculadora h2,
+    #resultado h2 {
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR EN HORIZONTAL
+   ========================================================= */
+
+@media (orientation: landscape) and (max-width: 900px) {
+
+    #inicio {
+        min-height: min(78vh, 500px);
+    }
+
+    #inicio > img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+    #calculadora h2,
+    #resultado h2 {
+        max-width: 100%;
+        min-width: 0;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+}
+</style>
 
 </head>
 
 
-<body class="bg-zinc-270 text-black">
+<body class="bg-white text-black overflow-x-hidden">
 
 
     <!-- =========================================================
@@ -1017,7 +1736,7 @@
             class="relative overflow-hidden bg-black border-b border-zinc-800">
 
 
-            <img src="./imagenes/Hero_Spartan.jpg" alt="Spartan Fitness Store" class="absolute inset-0 w-full h-full object-contain object-center pointer-events-none">
+            <img src="./imagenes/Hero_Spartan.jpg" alt="Spartan Fitness Store" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none">
 
             <div
                 class="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-10">
