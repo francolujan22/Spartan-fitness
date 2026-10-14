@@ -22,162 +22,274 @@ const WHATSAPP_NUMBER = "5492267467021";
    PRODUCTOS
    ========================================================= */
 
-const defaultProducts = [
+ const defaultProducts = [
 
-    {
-        id: 1,
-        name: "Proteína Body Advance 1 Kg",
-        price: 43000,
-        category: "Proteínas",
-        stock: 4,
-        image: "./imagenes/proteina_body.webp"
-    },
+                {
+                    id: 1,
+                    nombre: "Proteína Whey Body Advance",
+                    categoria: "Proteínas",
+                    precio: 65000,
+                    descripcion:
+                        "Proteína de suero para complementar la alimentación y favorecer la recuperación muscular.",
+                    image: "./imagenes/proteina_body.webp",
+                    stock: 10
+                },
 
-    {
-        id: 2,
-        name: "Creatina ENA 300g",
-        price: 43000,
-        category: "Creatinas",
-        stock: 4,
-        image: "./imagenes/Creatina_ena.webp"
-    },
+                {
+                    id: 2,
+                    nombre: "Creatina ENA 300g",
+                    categoria: "Creatina",
+                    precio: 40000,
+                    descripcion:
+                        "Creatina monohidrato para complementar el entrenamiento de fuerza y potencia.",
+                    image: "./imagenes/Creatina_ena.webp",
+                    stock: 10
+                },
 
-    {
-        id: 3,
-        name: "Colágeno Hidrolizado Star Nutrition",
-        price: 30000,
-        category: "Suplementos",
-        stock: 4,
-        image: "./imagenes/Colageno_Hidrolizado.webp"
-    },
+                {
+                    id: 3,
+                    nombre: "Citrato de Magnesio ENA",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 20000,
+                    descripcion:
+                        "Suplemento de magnesio para complementar la alimentación diaria.",
+                    image: "./imagenes/Magnesio_Ena.webp",
+                    stock: 10
+                },
 
-    {
-        id: 4,
-        name: "Pancake Proteico Granger",
-        price: 35000,
-        category: "Alimentos",
-        stock: 4,
-        image: "./imagenes/pancake-proteico-granger-sabor-vainilla.webp"
-    },
+                {
+                    id: 4,
+                    nombre: "Colágeno Hidrolizado Star Nutrition",
+                    categoria: "Colágenos",
+                    precio: 30000,
+                    descripcion:
+                        "Colágeno hidrolizado para complementar la alimentación.",
+                    image: "./imagenes/colageno_hidrolizado.webp",
+                    stock: 10
+                },
 
-    {
-        id: 5,
-        name: "Pancake Keto Granger",
-        price: 35000,
-        category: "Alimentos",
-        stock: 4,
-        image: "./imagenes/Pancake-Keto-granger.webp"
-    },
+                {
+                    id: 5,
+                    nombre: "Colágeno Hidrolizado One Fit",
+                    categoria: "Colágenos",
+                    precio: 26000,
+                    descripcion:
+                        "Colágeno hidrolizado para complementar la alimentación.",
+                    image: "./imagenes/colageno_Onefit.webp",
+                    stock: 10
+                },
 
-    {
-        id: 6,
-        name: "Pasta de Maní",
-        price: 12000,
-        category: "Alimentos",
-        stock: 4,
-        image: "./imagenes/pasta_mani.webp"
-    },
+                {
+                    id: 6,
+                    nombre: "Acelerador Metabólico ENA",
+                    categoria: "Aceleradores Metabólicos",
+                    precio: 15000,
+                    descripcion:
+                        "Aliado para el control de peso y la definición muscular. Su fórmula con Thermo Technology combina extractos naturales para favorecer la actividad metabólica durante el descanso nocturno.",
+                    image: "./imagenes/acelerador_metabolico_ena.webp",
+                    stock: 10
+                },
 
-    {
-        id: 7,
-        name: "Hidromax Nutremax",
-        price: 22000,
-        category: "Hidratación",
-        stock: 4,
-        image: "./imagenes/Hydromax_nutremax.webp"
-    },
+                {
+                    id: 7,
+                    nombre: "Acelerador Metabólico BODY ADVANCE Lipo Xtreme",
+                    categoria: "Aceleradores Metabólicos",
+                    precio: 15000,
+                    descripcion:
+                        "Producto eficaz destinado a la movilización de ácidos grasos y eliminación de líquido subcutáneo excedente.",
+                    image: "./imagenes/Lipo_xtreme.webp",
+                    stock: 10
+                },
 
-    {
-        id: 8,
-        name: "Pro Salt Nutremax",
-        price: 18000,
-        category: "Hidratación",
-        stock: 4,
-        image: "./imagenes/Prosalt_nutremax.webp"
-    },
+                {
+                    id: 8,
+                    nombre: "Acelerador Metabólico XBody",
+                    categoria: "Aceleradores Metabólicos",
+                    precio: 15000,
+                    descripcion:
+                        "Producto eficaz destinado a la movilización de ácidos grasos y eliminación de líquido subcutáneo excedente.",
+                    image: "./imagenes/ToneUp_XBody.avif",
+                    stock: 10
+                },
 
-    {
-        id: 9,
-        name: "Multivitamínico Gentech",
-        price: 18000,
-        category: "Vitaminas",
-        stock: 4,
-        image: "./imagenes/Multivitaminico_Gentech.webp"
-    },
+                {
+                    id: 9,
+                    nombre: "Creatina Star Nutrition",
+                    categoria: "Creatina",
+                    precio: 28000,
+                    descripcion:
+                        "Creatina para complementar el entrenamiento de fuerza y potencia.",
+                    image: "./imagenes/Creatina_Star.webp",
+                    stock: 10
+                },
 
-    {
-        id: 10,
-        name: "Gel Nutremax",
-        price: 5000,
-        category: "Energía",
-        stock: 4,
-        image: "./imagenes/Gel_nutremax.webp"
-    },
+                {
+                    id: 10,
+                    nombre: "Creatina Monohidrato Optimum Nutrition",
+                    categoria: "Creatina",
+                    precio: 40000,
+                    descripcion:
+                        "Creatina monohidrato para complementar el entrenamiento deportivo.",
+                    image: "./imagenes/Creatina_OP.webp",
+                    stock: 10
+                },
 
-    {
-        id: 11,
-        name: "Acelerador Metabólico ENA",
-        price: 22000,
-        category: "Quemadores",
-        stock: 4,
-        image: "./imagenes/Acelerador_Metabolico_ENA-nobg.png"
-    },
+                {
+                    id: 11,
+                    nombre: "Creatina Black",
+                    categoria: "Creatina",
+                    precio: 40000,
+                    descripcion:
+                        "Creatina para complementar el entrenamiento deportivo.",
+                    image: "./imagenes/Creatina_Black.webp",
+                    stock: 10
+                },
 
-    {
-        id: 12,
-        name: "Omega 3 Geonat",
-        price: 25000,
-        category: "Salud",
-        stock: 4,
-        image: "./imagenes/Omega_3.webp"
-    },
+                {
+                    id: 12,
+                    nombre: "Omega 3 Geonat",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 27000,
+                    descripcion:
+                        "Suplemento de Omega 3 para complementar la alimentación diaria.",
+                    image: "./imagenes/Omega_3.webp",
+                    stock: 10
+                },
 
-    {
-        id: 13,
-        name: "Citrato de Magnesio ENA",
-        price: 27000,
-        category: "Minerales",
-        stock: 4,
-        image: "./imagenes/Magnesio_Ena.webp"
-    },
+                {
+                    id: 13,
+                    nombre: "Omega 3 One Fit",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 27000,
+                    descripcion:
+                        "Suplemento de Omega 3 para complementar la alimentación diaria.",
+                    image: "./imagenes/Omega3_Onefit.webp",
+                    stock: 10
+                },
 
-    {
-        id: 14,
-        name: "Cupcakes Proteico Granger",
-        price: 16000,
-        category: "Alimentos",
-        stock: 4,
-        image: "./imagenes/Cupcakes_Granger.webp"
-    },
+                {
+                    id: 14,
+                    nombre: "Multivitamínico GENTECH",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 20000,
+                    descripcion:
+                        "Complejo de vitaminas y minerales para complementar la alimentación.",
+                    image: "./imagenes/Multivitaminico_Gentech.webp",
+                    stock: 10
+                },
 
-    {
-        id: 15,
-        name: "Omelette Granger",
-        price: 16000,
-        category: "Alimentos",
-        stock: 4,
-        image: "./imagenes/Omelette_Granger.webp"
-    },
+                {
+                    id: 15,
+                    nombre: "Multivitamínico One Fit",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 20000,
+                    descripcion:
+                        "Complejo de vitaminas y minerales para complementar la alimentación.",
+                    image: "./imagenes/Multivitaminico_Onefit.webp",
+                    stock: 10
+                },
 
-    {
-        id: 16,
-        name: "Cookies Proteica Granger",
-        price: 14000,
-        category: "Alimentos",
-        stock: 4,
-        image: "./imagenes/cookies_proteicas.webp"
-    },
+                {
+                    id: 16,
+                    nombre: "Pancakes Keto Granger",
+                    categoria: "Alimentos",
+                    precio: 16000,
+                    descripcion:
+                        "Preparado Granger para elaborar pancakes y disfrutar en desayunos o meriendas.",
+                    image: "./imagenes/pancake-keto-granger.webp",
+                    stock: 10
+                },
 
-    {
-        id: 17,
-        name: "Barritas Proteicas ENA",
-        price: 43000,
-        category: "Proteínas",
-        stock: 4,
-        image: "./imagenes/Barritas_Proteicas_ENA.webp"
-    }
+                {
+                    id: 17,
+                    nombre: "Pancakes Proteicos Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Preparado Granger para elaborar pancakes y disfrutar en desayunos o meriendas.",
+                    image: "./imagenes/pancake-proteico-granger-sabor-vainilla.webp",
+                    stock: 10
+                },
 
-];
+                {
+                    id: 18,
+                    nombre: "Cookies Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Cookies Granger para disfrutar como snack o colación.",
+                    image: "./imagenes/cookies_proteicas.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 19,
+                    nombre: "Omelette Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Preparado Granger para elaborar omelettes.",
+                    image: "./imagenes/Omelette_Granger.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 20,
+                    nombre: "Cupcakes Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Preparado Granger para elaborar cupcakes.",
+                    image: "./imagenes/Cupcakes_Granger.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 21,
+                    nombre: "Pasta de Maní Entrenuts",
+                    categoria: "Alimentos",
+                    precio: 5000,
+                    descripcion:
+                        "Pasta de maní para acompañar desayunos, meriendas y preparaciones.",
+                    image: "./imagenes/pasta_mani.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 22,
+                    nombre: "Pro Salt Nutremax",
+                    categoria: "Rehidratación",
+                    precio: 11000,
+                    descripcion:
+                        "Producto deportivo Nutremax para acompañar estrategias de hidratación.",
+                    image: "./imagenes/prosalt_nutremax.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 23,
+                    nombre: "Hydromax Nutremax",
+                    categoria: "Rehidratación",
+                    precio: 19000,
+                    descripcion:
+                        "Producto Nutremax para acompañar la hidratación durante la actividad física.",
+                    image: "./imagenes/hydromax_nutremax.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 24,
+                    nombre: "Barritas Proteicas ENA",
+                    categoria: "Alimentos",
+                    precio: 2600,
+                    descripcion:
+                        "Barrita proteica ENA para disfrutar como snack.",
+                    image: "./imagenes/Barritas_Proteicas_ENA.webp",
+                    stock: 10
+                }
+
+                ];
+
 
 
 /* =========================================================
