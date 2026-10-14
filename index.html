@@ -38,8 +38,6 @@
     <meta name="author" content="Franco Luján">
 
 
-    <!-- SEO: reemplazá TU-DOMINIO.com por el dominio real antes de publicar -->
-
     <link rel="canonical"
         href="https://spartanfitness.com.ar/">
 
@@ -254,7 +252,7 @@
                 "name":
                     "Suplementos deportivos de Spartan Fitness Store",
 
-                "numberOfItems": 12,
+                "numberOfItems": 25,
 
                 "itemListElement": [
 
@@ -1335,6 +1333,289 @@
     }
 
 }
+
+
+        /* =========================================================
+           RESPONSIVE FINAL — FILTRO DE CATEGORÍAS + PRODUCTOS
+           Smartphone → Tablet → Laptop → Desktop
+           Mantiene la identidad visual existente.
+           ========================================================= */
+
+        #category-filters {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+            scrollbar-width: none;
+
+            flex-wrap: nowrap;
+
+            padding: 4px 2px 10px;
+
+            touch-action: pan-x;
+        }
+
+        #category-filters::-webkit-scrollbar {
+            display: none;
+        }
+
+        #category-filters .category-filter {
+            flex: 0 0 auto;
+            min-width: max-content;
+            min-height: 44px;
+
+            padding: 12px 18px;
+
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            line-height: 1;
+
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* =========================================================
+           SMARTPHONES MUY PEQUEÑOS — 320 a 374px
+           ========================================================= */
+
+        @media (max-width: 374px) {
+
+            #productos {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            #category-filters {
+                gap: 8px;
+                margin-bottom: 28px;
+                padding-left: 1px;
+                padding-right: 1px;
+                padding-bottom: 9px;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 11px 13px;
+                font-size: 10px;
+                letter-spacing: .04em;
+                border-radius: .75rem;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 14px;
+            }
+        }
+
+        /* =========================================================
+           SMARTPHONES — 375 a 639px
+           ========================================================= */
+
+        @media (min-width: 375px) and (max-width: 639px) {
+
+            #productos {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            #category-filters {
+                gap: 9px;
+                margin-bottom: 30px;
+                padding-left: 1px;
+                padding-right: 1px;
+                padding-bottom: 9px;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 12px 15px;
+                font-size: 11px;
+                letter-spacing: .05em;
+                border-radius: .8rem;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 16px;
+            }
+        }
+
+        /* =========================================================
+           TABLETS PEQUEÑAS — 640 a 767px
+           ========================================================= */
+
+        @media (min-width: 640px) and (max-width: 767px) {
+
+            #productos {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            #category-filters {
+                gap: 10px;
+                margin-bottom: 34px;
+                padding-bottom: 10px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+        }
+
+        /* =========================================================
+           TABLETS — 768 a 1023px
+           Las categorías pasan a varias filas.
+           ========================================================= */
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+
+            #productos {
+                padding-left: 28px;
+                padding-right: 28px;
+            }
+
+            #category-filters {
+                flex-wrap: wrap;
+                overflow-x: visible;
+                overflow-y: visible;
+                padding-bottom: 0;
+                margin-bottom: 36px;
+                column-gap: 10px;
+                row-gap: 10px;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 11px 17px;
+                font-size: 12px;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+        }
+
+        /* =========================================================
+           LAPTOPS — 1024 a 1279px
+           ========================================================= */
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+
+            #category-filters {
+                flex-wrap: wrap;
+                overflow-x: visible;
+                overflow-y: visible;
+                padding-bottom: 0;
+                margin-bottom: 40px;
+                column-gap: 10px;
+                row-gap: 12px;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 12px 18px;
+                font-size: 12px;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 28px;
+            }
+        }
+
+        /* =========================================================
+           DESKTOP — 1280 a 1535px
+           ========================================================= */
+
+        @media (min-width: 1280px) and (max-width: 1535px) {
+
+            #category-filters {
+                flex-wrap: wrap;
+                overflow-x: visible;
+                overflow-y: visible;
+                padding-bottom: 0;
+                margin-bottom: 42px;
+                column-gap: 12px;
+                row-gap: 12px;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 12px 19px;
+                font-size: 13px;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 32px;
+            }
+        }
+
+        /* =========================================================
+           DESKTOP GRANDE — 1536px+
+           ========================================================= */
+
+        @media (min-width: 1536px) {
+
+            #category-filters {
+                flex-wrap: wrap;
+                overflow-x: visible;
+                overflow-y: visible;
+                padding-bottom: 0;
+                margin-bottom: 42px;
+                column-gap: 12px;
+                row-gap: 12px;
+            }
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+
+            #product-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 32px;
+            }
+        }
+
+        /* =========================================================
+           DISPOSITIVOS TÁCTILES
+           ========================================================= */
+
+        @media (pointer: coarse) {
+
+            #category-filters .category-filter {
+                min-height: 44px;
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+        }
+
 </style>
 
 </head>
@@ -1736,7 +2017,7 @@
             class="relative overflow-hidden bg-black border-b border-zinc-800">
 
 
-            <img src="./imagenes/Hero_Spartan.jpg" alt="Spartan Fitness Store" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none">
+            <img src="./imagenes/Hero_Spartan2.jpg" alt="Spartan Fitness Store" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none">
 
             <div
                 class="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-10">
@@ -1855,6 +2136,14 @@
 
                 </h2>
 
+            </div>
+
+
+            <div
+                id="category-filters"
+                class="flex gap-3 overflow-x-auto no-scrollbar pb-2 mb-10"
+                role="tablist"
+                aria-label="Filtrar productos por categoría">
             </div>
 
 
@@ -2246,26 +2535,24 @@
             id="contacto"
             class="bg-zinc-950 border-t border-zinc-800">
 
+            <div class="max-w-7xl mx-auto px-6 py-16">
 
-            <div
-                class="max-w-7xl mx-auto px-6 py-16">
-
-
+                <!-- CONTENIDO PRINCIPAL -->
                 <div
-                    class="grid grid-cols-1 lg:grid-cols-[260px_1fr] items-start gap-10">
+                    class="grid grid-cols-1 lg:grid-cols-[1fr_auto]
+                        items-start gap-12 lg:gap-16">
 
+                    <!-- MARCA Y REDES SOCIALES -->
+                    <div class="pl-0 lg:pl-8">
 
-                    <div
-                        class="pl-4 lg:pl-8">
-
-
+                        <!-- LOGO -->
                         <div
                             onclick="window.scrollTo({top:0,behavior:'smooth'})"
                             class="cursor-pointer select-none">
 
-
                             <h2
-                                class="text-2xl font-black italic tracking-tight uppercase text-white leading-none">
+                                class="text-2xl font-black italic tracking-tight
+                                    uppercase text-white leading-none">
 
                                 SPARTAN
 
@@ -2275,64 +2562,125 @@
 
                             </h2>
 
-
                         </div>
 
-
+                        <!-- DESCRIPCIÓN -->
                         <p
-                            class="text-zinc-300 mt-5 text-sm leading-relaxed max-w-xs">
+                            class="text-zinc-200 mt-5 text-sm leading-relaxed
+                                max-w-sm">
 
-                            Suplementación deportiva de calidad para potenciar tu rendimiento.
-                            Acompañamos atletas, equipos y personas que buscan superarse cada día.
+                            Suplementación deportiva de calidad para potenciar
+                            tu rendimiento. Acompañamos atletas, equipos y
+                            personas que buscan superarse cada día.
 
                         </p>
 
+                        <!-- REDES SOCIALES -->
+                        <div class="mt-6">
+
+                            <p
+                                class="text-white text-sm font-bold uppercase
+                                    tracking-wider mb-4">
+
+                                Seguinos en nuestras redes
+
+                            </p>
+
+                            <div class="flex flex-wrap items-center gap-3">
+
+                                <!-- INSTAGRAM -->
+                                <a
+                                    href="https://www.instagram.com/spartanfitness_store/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Instagram de Spartan Fitness"
+                                    class="w-11 h-11 flex items-center justify-center
+                                        rounded-full
+                                        bg-gradient-to-tr from-yellow-400
+                                        via-pink-500 to-purple-600
+                                        text-white shadow-md
+                                        transition-transform duration-300
+                                        hover:-translate-y-1
+                                        focus-visible:outline-none
+                                        focus-visible:ring-2
+                                        focus-visible:ring-pink-400">
+
+                                    <i class="fa-brands fa-instagram text-xl"></i>
+
+                                </a>
+
+                                <!-- WHATSAPP -->
+                                <a
+                                    href="https://wa.me/5492267467021?text=Hola%20Spartan%20Fitness%20💪,%20quiero%20hacer%20una%20consulta."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="WhatsApp de Spartan Fitness"
+                                    class="w-11 h-11 flex items-center justify-center
+                                        rounded-full bg-[#25D366]
+                                        text-white shadow-md
+                                        transition-transform duration-300
+                                        hover:-translate-y-1
+                                        focus-visible:outline-none
+                                        focus-visible:ring-2
+                                        focus-visible:ring-green-400">
+
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
-
+                    <!-- ENLACES LEGALES -->
                     <div
-                        class="flex items-center justify-center h-full">
+                        class="flex flex-col items-start lg:items-end
+                            lg:pt-2 w-full">
 
+                        <p
+                            class="text-white text-sm font-bold uppercase
+                                tracking-wider mb-8">
+
+                            Información legal
+
+                        </p>
 
                         <div
-                            class="flex flex-wrap justify-center gap-10">
-
+                            class="flex flex-col items-start lg:items-end
+                                gap-4 w-full">
 
                             <a
                                 href="#terminos"
-                                class="text-zinc-400 hover:text-spartan-orange transition text-sm font-medium">
+                                class="text-zinc-400 hover:text-spartan-orange
+                                    transition-colors duration-300
+                                    text-sm font-medium">
 
                                 Términos y Condiciones
 
                             </a>
 
-
                             <a
                                 href="#privacidad"
-                                class="text-zinc-400 hover:text-spartan-orange transition text-sm font-medium">
+                                class="text-zinc-400 hover:text-spartan-orange
+                                    transition-colors duration-300
+                                    text-sm font-medium">
 
                                 Política de Privacidad
 
                             </a>
 
-
                         </div>
-
-
                     </div>
-
-
                 </div>
 
-
-                <div
-                    class="border-t border-zinc-800 mt-12 pt-8">
-
+                <!-- COPYRIGHT Y DESARROLLADOR -->
+                <div class="border-t border-zinc-800 mt-12 pt-8">
 
                     <div
-                        class="flex flex-col md:flex-row items-center justify-between gap-4">
-
+                        class="flex flex-col md:flex-row
+                            items-center justify-between gap-4">
 
                         <p
                             class="text-white text-sm text-center md:text-left">
@@ -2348,32 +2696,25 @@
 
                         </p>
 
-
                         <p
-                            class="text-white text-xs uppercase tracking-[0.2em]">
+                            class="text-white text-xs uppercase
+                                tracking-[0.2em] text-center">
 
-                            Designed & Developed by
+                            Designed &amp; Developed by
 
-                            <span
-                                class="text-spartan-orange font-bold">
-
+                            <span class="text-spartan-orange font-bold">
                                 Franco Luján
-
                             </span>
 
                         </p>
 
-
                     </div>
 
-
                 </div>
-
 
             </div>
 
         </footer>
-
 
         <a
             href="https://wa.me/5492267467021?text=Hola%20Spartan%20Fitness%20💪,%20quiero%20hacer%20una%20consulta."
@@ -2397,7 +2738,7 @@
 
         <script>
 
-            (() => {
+            (   () => {
 
                 "use strict";
 
@@ -2416,7 +2757,7 @@
                     "spartan_products_version";
 
                 const PRODUCTS_VERSION =
-                    "27.0-stable";
+                    "34.0-stable";
 
                 const WHATSAPP_NUMBER =
                     "5492267467021";
@@ -2428,309 +2769,269 @@
 
                 const defaultProducts = [
 
-
-                    {
-                        id: 1,
-
-                        nombre: "Proteína Whey",
-
-                        categoria: "Proteínas",
-
-                        precio: 43000,
-
-                        descripcion:
-                            "Proteína de suero ideal para recuperación y crecimiento muscular.",
-
-                        image:
-                            "./imagenes/proteina_body.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 2,
-
-                        nombre: "Creatina ENA 300g",
-
-                        categoria: "Creatina",
-
-                        precio: 40000,
-
-                        descripcion:
-                            "Creatina monohidrato para mejorar fuerza, potencia y rendimiento.",
-
-                        image:
-                            "./imagenes/Creatina_ena.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 3,
-
-                        nombre: "Citrato de Magnesio ENA",
-
-                        categoria: "Vitaminas y minerales",
-
-                        precio: 20000,
-
-                        descripcion:
-                            "Suplemento de magnesio para complementar tu alimentación diaria.",
-
-                        image:
-                            "./imagenes/Magnesio_Ena.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 4,
-
-                        nombre: "Colágeno Star Nutrition",
-
-                        categoria: "Salud",
-
-                        precio: 30000,
-
-                        descripcion:
-                            "Colágeno hidrolizado para complementar el cuidado de articulaciones y tejidos.",
-
-                        image:
-                            "./imagenes/colageno_hidrolizado.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 5,
-
-                        nombre: "Omega 3",
-
-                        categoria: "Salud",
-
-                        precio: 26000,
-
-                        descripcion:
-                            "Ácidos grasos Omega 3 para complementar una alimentación equilibrada.",
-
-                        image:
-                            "./imagenes/Omega_3.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 6,
-
-                        nombre: "Acelerador Metabólico",
-
-                        categoria: "Pre-entreno",
-
-                        precio: 15000,
-
-                        descripcion:
-                            "Suplemento pensado para acompañar tus entrenamientos.",
-
-                        image:
-                            "./imagenes/acelerador_metabolico_ena.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 7,
-
-                        nombre: "Multivitamínico GENTECH",
-
-                        categoria: "Vitaminas y Minerales",
-
-                        precio: 19000,
-
-                        descripcion:
-                            "Complejo de vitaminas y minerales para complementar la alimentación.",
-
-                        image:
-                            "./imagenes/Multivitaminico_Gentech.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 8,
-
-                        nombre: "Pancakes keto",
-
-                        categoria: "Alimentos",
-
-                        precio: 20000,
-
-                        descripcion:
-                            "Preparado proteico ideal para desayunos y meriendas.",
-
-                        image:
-                            "./imagenes/pancake-keto-granger.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 9,
-
-                        nombre: "Pancakes Proteicos",
-
-                        categoria: "Alimentos",
-
-                        precio: 20000,
-
-                        descripcion:
-                            "Preparado proteico ideal para desayunos y meriendas.",
-
-                        image:
-                            "./imagenes/pancake-proteico-granger-sabor-vainilla.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 10,
-
-                        nombre: "Cookies proteicas",
-
-                        categoria: "Alimenticio",
-
-                        precio: 27000,
-
-                        descripcion:
-                            "Preparado proteico ideal para desayunos y meriendas.",
-
-                        image:
-                            "./imagenes/cookies_proteicas.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 11,
-
-                        nombre: "Omelette Proteicos",
-
-                        categoria: "Vitaminas y minerales",
-
-                        precio: 15000,
-
-                        descripcion:
-                            "Zinc para complementar la ingesta diaria de este mineral.",
-
-                        image:
-                            "./imagenes/Omelette_Granger.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 12,
-
-                        nombre: "cupcakes proteicas",
-
-                        categoria: "Alimenticio",
-
-                        precio: 32000,
-
-                        descripcion:
-                            "Beta-alanina para acompañar entrenamientos de alta intensidad.",
-
-                        image:
-                            "./imagenes/Cupcakes_Granger.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 13,
-
-                        nombre: "Pasta de Maní",
-
-                        categoria: "Alimenticio",
-
-                        precio: 28000,
-
-                        descripcion:
-                            "Suplemento de L-Carnitina para acompañar tu rutina deportiva.",
-
-                        image:
-                            "./imagenes/pasta_mani.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 14,
-
-                        nombre: "Pro Salt Nutremax",
-
-                        categoria: "Re hidratación",
-
-                        precio: 28000,
-
-                        descripcion:
-                            "Suplemento de L-Carnitina para acompañar tu rutina deportiva.",
-
-                        image:
-                            "./imagenes/prosalt_nutremax.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 15,
-
-                        nombre: "Hydromax Nutremax",
-
-                        categoria: "Re hidratación",
-
-                        precio: 28000,
-
-                        descripcion:
-                            "Suplemento de L-Carnitina para acompañar tu rutina deportiva.",
-
-                        image:
-                            "./imagenes/hydromax_nutremax.webp",
-
-                        stock: 10
-                    },
-
-
-                    {
-                        id: 16,
-
-                        nombre: "Barritas Proteicas Ena",
-
-                        categoria: "Alimenticio",
-
-                        precio: 28000,
-
-                        descripcion:
-                            "Snack proteico para alcanzar tu requerimiento diario de Proteina",
-
-                        image:
-                            "./imagenes/Barritas_Proteicas_ENA.webp",
-
-                        stock: 10
-                    }
+                {
+                    id: 1,
+                    nombre: "Proteína Whey Body Advance",
+                    categoria: "Proteínas",
+                    precio: 65000,
+                    descripcion:
+                        "Proteína de suero para complementar la alimentación y favorecer la recuperación muscular.",
+                    image: "./imagenes/proteina_body.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 2,
+                    nombre: "Creatina ENA 300g",
+                    categoria: "Creatina",
+                    precio: 40000,
+                    descripcion:
+                        "Creatina monohidrato para complementar el entrenamiento de fuerza y potencia.",
+                    image: "./imagenes/Creatina_ena.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 3,
+                    nombre: "Citrato de Magnesio ENA",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 20000,
+                    descripcion:
+                        "Suplemento de magnesio para complementar la alimentación diaria.",
+                    image: "./imagenes/Magnesio_Ena.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 4,
+                    nombre: "Colágeno Hidrolizado Star Nutrition",
+                    categoria: "Colágenos",
+                    precio: 30000,
+                    descripcion:
+                        "Colágeno hidrolizado para complementar la alimentación.",
+                    image: "./imagenes/colageno_hidrolizado.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 5,
+                    nombre: "Colágeno Hidrolizado One Fit",
+                    categoria: "Colágenos",
+                    precio: 26000,
+                    descripcion:
+                        "Colágeno hidrolizado para complementar la alimentación.",
+                    image: "./imagenes/colageno_Onefit.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 6,
+                    nombre: "Acelerador Metabólico ENA",
+                    categoria: "Aceleradores Metabólicos",
+                    precio: 15000,
+                    descripcion:
+                        "Aliado para el control de peso y la definición muscular. Su fórmula con Thermo Technology combina extractos naturales para favorecer la actividad metabólica durante el descanso nocturno.",
+                    image: "./imagenes/acelerador_metabolico_ena.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 7,
+                    nombre: "Acelerador Metabólico BODY ADVANCE Lipo Xtreme",
+                    categoria: "Aceleradores Metabólicos",
+                    precio: 15000,
+                    descripcion:
+                        "Producto eficaz destinado a la movilización de ácidos grasos y eliminación de líquido subcutáneo excedente.",
+                    image: "./imagenes/Lipo_xtreme.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 8,
+                    nombre: "Acelerador Metabólico XBody",
+                    categoria: "Aceleradores Metabólicos",
+                    precio: 15000,
+                    descripcion:
+                        "Producto eficaz destinado a la movilización de ácidos grasos y eliminación de líquido subcutáneo excedente.",
+                    image: "./imagenes/ToneUp_XBody.avif",
+                    stock: 10
+                },
+
+                {
+                    id: 9,
+                    nombre: "Creatina Star Nutrition",
+                    categoria: "Creatina",
+                    precio: 28000,
+                    descripcion:
+                        "Creatina para complementar el entrenamiento de fuerza y potencia.",
+                    image: "./imagenes/Creatina_Star.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 10,
+                    nombre: "Creatina Monohidrato Optimum Nutrition",
+                    categoria: "Creatina",
+                    precio: 40000,
+                    descripcion:
+                        "Creatina monohidrato para complementar el entrenamiento deportivo.",
+                    image: "./imagenes/Creatina_OP.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 11,
+                    nombre: "Creatina Black",
+                    categoria: "Creatina",
+                    precio: 40000,
+                    descripcion:
+                        "Creatina para complementar el entrenamiento deportivo.",
+                    image: "./imagenes/Creatina_Black.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 12,
+                    nombre: "Omega 3 Geonat",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 27000,
+                    descripcion:
+                        "Suplemento de Omega 3 para complementar la alimentación diaria.",
+                    image: "./imagenes/Omega_3.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 13,
+                    nombre: "Omega 3 One Fit",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 27000,
+                    descripcion:
+                        "Suplemento de Omega 3 para complementar la alimentación diaria.",
+                    image: "./imagenes/Omega_3_OneFit.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 14,
+                    nombre: "Multivitamínico GENTECH",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 20000,
+                    descripcion:
+                        "Complejo de vitaminas y minerales para complementar la alimentación.",
+                    image: "./imagenes/Multivitaminico_Gentech.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 15,
+                    nombre: "Multivitamínico One Fit",
+                    categoria: "Vitaminas y Minerales",
+                    precio: 20000,
+                    descripcion:
+                        "Complejo de vitaminas y minerales para complementar la alimentación.",
+                    image: "./imagenes/Multivitaminico_OneFit.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 16,
+                    nombre: "Pancakes Keto Granger",
+                    categoria: "Alimentos",
+                    precio: 16000,
+                    descripcion:
+                        "Preparado Granger para elaborar pancakes y disfrutar en desayunos o meriendas.",
+                    image: "./imagenes/pancake-keto-granger.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 17,
+                    nombre: "Pancakes Proteicos Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Preparado Granger para elaborar pancakes y disfrutar en desayunos o meriendas.",
+                    image: "./imagenes/pancake-proteico-granger-sabor-vainilla.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 18,
+                    nombre: "Cookies Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Cookies Granger para disfrutar como snack o colación.",
+                    image: "./imagenes/cookies_proteicas.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 19,
+                    nombre: "Omelette Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Preparado Granger para elaborar omelettes.",
+                    image: "./imagenes/Omelette_Granger.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 20,
+                    nombre: "Cupcakes Granger",
+                    categoria: "Alimentos",
+                    precio: 20000,
+                    descripcion:
+                        "Preparado Granger para elaborar cupcakes.",
+                    image: "./imagenes/Cupcakes_Granger.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 21,
+                    nombre: "Pasta de Maní Entrenuts",
+                    categoria: "Alimentos",
+                    precio: 5000,
+                    descripcion:
+                        "Pasta de maní para acompañar desayunos, meriendas y preparaciones.",
+                    image: "./imagenes/pasta_mani.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 22,
+                    nombre: "Pro Salt Nutremax",
+                    categoria: "Rehidratación",
+                    precio: 11000,
+                    descripcion:
+                        "Producto deportivo Nutremax para acompañar estrategias de hidratación.",
+                    image: "./imagenes/prosalt_nutremax.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 23,
+                    nombre: "Hydromax Nutremax",
+                    categoria: "Rehidratación",
+                    precio: 19000,
+                    descripcion:
+                        "Producto Nutremax para acompañar la hidratación durante la actividad física.",
+                    image: "./imagenes/hydromax_nutremax.webp",
+                    stock: 10
+                },
+
+                {
+                    id: 24,
+                    nombre: "Barritas Proteicas ENA",
+                    categoria: "Alimentos",
+                    precio: 2600,
+                    descripcion:
+                        "Barrita proteica ENA para disfrutar como snack.",
+                    image: "./imagenes/Barritas_Proteicas_ENA.webp",
+                    stock: 10
+                }
 
                 ];
 
@@ -2738,6 +3039,8 @@
                 let products = [];
 
                 let cart = [];
+
+                let activeCategory = "Todos";
 
 
                 /* =========================================================
@@ -2803,98 +3106,191 @@
                 }
 
 
-                function loadProducts() {
+                async function loadProducts() {
 
                     try {
 
-                        const savedVersion =
-                            localStorage.getItem(
-                                PRODUCTS_VERSION_KEY
-                            );
+                        const response = await fetch(
+                            "http://localhost:3000/api/productos",
+                            {
+                                method: "GET",
+                                headers: {
+                                    "Accept": "application/json"
+                                },
+                                cache: "no-store"
+                            }
+                        );
 
-                        const savedProducts =
-                            JSON.parse(
-                                localStorage.getItem(
-                                    PRODUCTS_KEY
-                                ) || "null"
-                            );
-
-
-                        if (
-
-                            savedVersion === PRODUCTS_VERSION &&
-
-                            Array.isArray(savedProducts) &&
-
-                            savedProducts.length ===
-                            defaultProducts.length
-
-                        ) {
-
-                            return savedProducts
-
-                                .map((saved) => {
-
-                                    const original =
-                                        defaultProducts.find(
-                                            (p) =>
-                                                Number(p.id) ===
-                                                Number(saved.id)
-                                        );
-
-                                    return original
-                                        ? { ...original, ...saved }
-                                        : null;
-
-                                })
-
-                                .filter(Boolean);
-
+                        if (!response.ok) {
+                            throw new Error(`Error HTTP ${response.status}`);
                         }
 
+                        const apiProducts = await response.json();
+
+                        if (!Array.isArray(apiProducts)) {
+                            throw new Error(
+                                "La API no devolvió una lista de productos."
+                            );
+                        }
+
+                        console.log(
+                            "BACKEND DEVOLVIÓ:",
+                            apiProducts.length,
+                            "PRODUCTOS"
+                        );
+
+                        console.log(
+                            "IDS RECIBIDOS:",
+                            apiProducts.map((producto) => producto.id)
+                        );
+
+                        /*
+                         * IMPORTANTE:
+                         * El catálogo visual se construye siempre a partir de
+                         * defaultProducts. Si el backend devuelve solo una
+                         * parte del catálogo, los productos restantes no
+                         * desaparecen de la tienda.
+                         *
+                         * Los datos que sí existen en el backend (precio,
+                         * nombre, stock, etc.) reemplazan los datos base.
+                         */
+                        const apiById = new Map(
+                            apiProducts.map((product) => [
+                                Number(product.id),
+                                product
+                            ])
+                        );
+
+                        const connectedProducts = defaultProducts.map(
+                            (original) => {
+
+                                const apiProduct = apiById.get(
+                                    Number(original.id)
+                                );
+
+                                if (!apiProduct) {
+                                    return {
+                                        ...original,
+                                        id: Number(original.id),
+                                        precio: Number(original.precio) || 0,
+                                        stock: Number(original.stock) || 0
+                                    };
+                                }
+
+                                return {
+                                    ...original,
+                                    ...apiProduct,
+                                    id: Number(apiProduct.id),
+                                    nombre:
+                                        apiProduct.nombre ?? original.nombre,
+                                    categoria:
+                                        apiProduct.categoria ?? original.categoria,
+                                    precio:
+                                        Number.isFinite(Number(apiProduct.precio))
+                                            ? Number(apiProduct.precio)
+                                            : Number(original.precio) || 0,
+                                    descripcion:
+                                        apiProduct.descripcion ??
+                                        original.descripcion ??
+                                        original.desc ??
+                                        "Producto disponible en Spartan Fitness.",
+                                    image:
+                                        apiProduct.image ?? original.image ?? "",
+                                    stock:
+                                        Number.isFinite(Number(apiProduct.stock))
+                                            ? Number(apiProduct.stock)
+                                            : Number(original.stock) || 0
+                                };
+                            }
+                        );
+
+                        console.log(
+                            "PRODUCTOS FINALES DEL FRONTEND:",
+                            connectedProducts.length
+                        );
+
+                        console.log(
+                            "IDS FINALES:",
+                            connectedProducts.map((producto) => producto.id)
+                        );
+
+                        try {
+                            localStorage.setItem(
+                                PRODUCTS_KEY,
+                                JSON.stringify(connectedProducts)
+                            );
+
+                            localStorage.setItem(
+                                PRODUCTS_VERSION_KEY,
+                                PRODUCTS_VERSION
+                            );
+                        } catch (storageError) {
+                            console.warn(
+                                "No se pudieron guardar los productos en localStorage.",
+                                storageError
+                            );
+                        }
+
+                        return connectedProducts;
 
                     } catch (error) {
 
-                        console.warn(
-                            "Error leyendo productos guardados. Se restaurarán los productos base.",
+                        console.error(
+                            "No se pudo conectar con el backend:",
                             error
                         );
 
-                    }
+                        /*
+                         * Si el backend no está disponible, primero intentamos
+                         * recuperar el catálogo guardado. Si tampoco existe,
+                         * usamos el catálogo completo del frontend.
+                         */
+                        try {
+                            const savedProducts = JSON.parse(
+                                localStorage.getItem(PRODUCTS_KEY) || "null"
+                            );
 
+                            if (
+                                Array.isArray(savedProducts) &&
+                                savedProducts.length > 0
+                            ) {
+                                console.warn(
+                                    "Backend no disponible. Usando productos locales."
+                                );
 
-                    const fresh =
-                        defaultProducts.map(
-                            (p) => ({ ...p })
-                        );
+                                /*
+                                 * Combinamos lo guardado con el catálogo base
+                                 * para evitar que una versión antigua de
+                                 * localStorage deje solamente 3 productos.
+                                 */
+                                const savedById = new Map(
+                                    savedProducts.map((product) => [
+                                        Number(product.id),
+                                        product
+                                    ])
+                                );
 
-
-                    try {
-
-                        localStorage.setItem(
-                            PRODUCTS_KEY,
-                            JSON.stringify(fresh)
-                        );
-
-                        localStorage.setItem(
-                            PRODUCTS_VERSION_KEY,
-                            PRODUCTS_VERSION
-                        );
-
-                    } catch (error) {
+                                return defaultProducts.map((original) => ({
+                                    ...original,
+                                    ...(savedById.get(Number(original.id)) || {})
+                                }));
+                            }
+                        } catch (localError) {
+                            console.warn(
+                                "No se pudieron leer los productos locales.",
+                                localError
+                            );
+                        }
 
                         console.warn(
-                            "No se pudieron inicializar los productos en localStorage.",
-                            error
+                            "Usando el catálogo completo del frontend."
                         );
 
+                        return defaultProducts.map((product) => ({
+                            ...product
+                        }));
                     }
-
-
-                    return fresh;
-
                 }
-
 
                 function loadCart() {
 
@@ -3116,6 +3512,87 @@
                 PRODUCTOS
                 ========================================================= */
 
+                function normalizeCategory(category) {
+
+                    const value = String(category || "").trim().toLowerCase();
+
+                    const categories = {
+                        "alimentos": "Alimentos",
+                        "alimentos": "Alimentos",
+                        "alimentos": "Alimentos",
+                        "rehidratación": "Rehidratación",
+                        "rehidratación": "Rehidratación",
+                        "rehidratación": "Rehidratación",
+                        "rehidratación": "Rehidratación",
+                        "vitaminas y minerales": "Vitaminas y Minerales",
+                        "vitaminas y minerales": "Vitaminas y Minerales",
+                        "Aceleradores Metabólicos": "Aceleradores Metabólicos",
+                        "Aceleradores Metabólicos": "Aceleradores Metabólicos",
+                        "proteínas": "Proteínas",
+                        "proteínas": "Proteínas",
+                        "creatina": "Creatina",
+                        "salud": "Salud"
+                    };
+
+                    return categories[value] || String(category || "").trim();
+                }
+
+
+                function getCategories() {
+
+                    const categories = products
+                        .map((product) => normalizeCategory(product.categoria))
+                        .filter(Boolean);
+
+                    return ["Todos", ...new Set(categories)];
+                }
+
+
+                function renderCategoryFilters() {
+
+                    const container = $("category-filters");
+
+                    if (!container) {
+                        return;
+                    }
+
+                    const categories = getCategories();
+
+                    container.innerHTML = categories.map((category) => {
+
+                        const isActive = category === activeCategory;
+
+                        return `
+
+                            <button
+                                type="button"
+                                class="category-filter flex-shrink-0 px-5 py-3 rounded-xl border text-xs sm:text-sm font-black uppercase tracking-wide transition-all duration-300 ${
+                                    isActive
+                                        ? "bg-spartan-orange border-spartan-orange text-black shadow-lg shadow-orange-500/10"
+                                        : "bg-zinc-950 border-zinc-800 text-zinc-400 hover:border-spartan-orange hover:text-spartan-orange"
+                                }"
+                                data-category="${escapeHTML(category)}"
+                                role="tab"
+                                aria-selected="${isActive}">
+                                ${escapeHTML(category)}
+                            </button>
+
+                        `;
+
+                    }).join("");
+                }
+
+
+                function filterProducts(category) {
+
+                    activeCategory = category;
+
+                    renderCategoryFilters();
+
+                    renderProducts();
+                }
+
+
                 function renderProducts() {
 
                     const grid =
@@ -3154,7 +3631,44 @@
                     }
 
 
-                    grid.innerHTML = products.map(
+                    const filteredProducts =
+                        activeCategory === "Todos"
+                            ? products
+                            : products.filter(
+                                (product) =>
+                                    normalizeCategory(product.categoria) ===
+                                    activeCategory
+                            );
+
+
+                    if (!filteredProducts.length) {
+
+                        grid.innerHTML = `
+
+                            <div
+                                class="col-span-full rounded-2xl border border-zinc-800 bg-zinc-950 p-10 text-center">
+
+                                <i
+                                    class="fa-solid fa-box-open text-4xl text-spartan-orange mb-4">
+                                </i>
+
+                                <p
+                                    class="text-zinc-400">
+
+                                    No hay productos disponibles en esta categoría.
+
+                                </p>
+
+                            </div>
+
+                        `;
+
+                        return;
+
+                    }
+
+
+                    grid.innerHTML = filteredProducts.map(
                         (product) => `
 
                             <article
@@ -3906,6 +4420,10 @@
                         $("objetivo")?.value;
 
 
+                    /* =====================================================
+                    VALIDACIÓN DE DATOS
+                    ===================================================== */
+
                     if (
 
                         !sexo ||
@@ -3940,6 +4458,11 @@
                     }
 
 
+                    /* =====================================================
+                    1. METABOLISMO BASAL
+                    Fórmula de Mifflin-St Jeor
+                    ===================================================== */
+
                     let bmr;
 
 
@@ -3962,17 +4485,38 @@
                     }
 
 
+                    /* =====================================================
+                    2. GASTO ENERGÉTICO TOTAL
+                    ===================================================== */
+
                     let calories =
                         bmr * actividad;
 
 
+                    /* =====================================================
+                    3. AJUSTE SEGÚN OBJETIVO
+
+                    PERDER:
+                    -15%
+
+                    MANTENER:
+                    0%
+
+                    GANAR:
+                    +15%
+                    ===================================================== */
+
                     if (objetivo === "perder") {
+
                         calories *= 0.85;
+
                     }
 
 
                     if (objetivo === "ganar") {
+
                         calories *= 1.15;
+
                     }
 
 
@@ -3983,32 +4527,128 @@
                         );
 
 
+                    /* =====================================================
+                    4. PROTEÍNAS SEGÚN OBJETIVO
+
+                    PERDER:
+                    2.2 g/kg
+
+                    MANTENER:
+                    1.8 g/kg
+
+                    GANAR:
+                    2.0 g/kg
+                    ===================================================== */
+
+                    let proteinFactor =
+                        1.8;
+
+
+                    if (objetivo === "perder") {
+
+                        proteinFactor =
+                            2.2;
+
+                    }
+
+
+                    if (objetivo === "ganar") {
+
+                        proteinFactor =
+                            2.0;
+
+                    }
+
+
                     const protein =
                         Math.round(
-                            peso * 2.2
+                            peso * proteinFactor
                         );
+
+
+                    /* =====================================================
+                    5. GRASAS SEGÚN OBJETIVO
+
+                    PERDER:
+                    0.7 g/kg
+
+                    MANTENER:
+                    0.9 g/kg
+
+                    GANAR:
+                    1.0 g/kg
+                    ===================================================== */
+
+                    let fatFactor =
+                        0.9;
+
+
+                    if (objetivo === "perder") {
+
+                        fatFactor =
+                            0.7;
+
+                    }
+
+
+                    if (objetivo === "ganar") {
+
+                        fatFactor =
+                            1.0;
+
+                    }
 
 
                     const fat =
                         Math.round(
-                            peso * 0.8
+                            peso * fatFactor
                         );
 
+
+                    /* =====================================================
+                    6. CALORÍAS DE PROTEÍNAS
+                    ===================================================== */
+
+                    const proteinCalories =
+                        protein * 4;
+
+
+                    /* =====================================================
+                    7. CALORÍAS DE GRASAS
+                    ===================================================== */
+
+                    const fatCalories =
+                        fat * 9;
+
+
+                    /* =====================================================
+                    8. CALORÍAS RESTANTES
+                    ===================================================== */
 
                     const remainingCalories =
                         Math.max(
                             0,
                             calories -
-                            (protein * 4) -
-                            (fat * 9)
+                            proteinCalories -
+                            fatCalories
                         );
 
+
+                    /* =====================================================
+                    9. CARBOHIDRATOS
+
+                    1 g de carbohidratos = 4 kcal
+                    ===================================================== */
 
                     const carbs =
                         Math.round(
                             remainingCalories / 4
                         );
 
+
+                    /* =====================================================
+                    10. MOSTRAR CALORÍAS
+                    ===================================================== */
 
                     if ($("calorias")) {
 
@@ -4018,6 +4658,10 @@
                     }
 
 
+                    /* =====================================================
+                    11. MOSTRAR PROTEÍNAS
+                    ===================================================== */
+
                     if ($("prote")) {
 
                         $("prote").textContent =
@@ -4025,6 +4669,10 @@
 
                     }
 
+
+                    /* =====================================================
+                    12. MOSTRAR CARBOHIDRATOS
+                    ===================================================== */
 
                     if ($("carbs")) {
 
@@ -4034,6 +4682,10 @@
                     }
 
 
+                    /* =====================================================
+                    13. MOSTRAR GRASAS
+                    ===================================================== */
+
                     if ($("grasas")) {
 
                         $("grasas").textContent =
@@ -4042,10 +4694,21 @@
                     }
 
 
+                    /* =====================================================
+                    14. MOSTRAR RESULTADO
+                    ===================================================== */
+
                     $("resultado")
                         ?.classList
                         .remove("hidden");
 
+
+                    /* =====================================================
+                    15. GUARDAR RESULTADOS
+
+                    Estos valores también pueden ser utilizados
+                    por otras funciones de Spartan Nutrition.
+                    ===================================================== */
 
                     window.spartanMacros = {
 
@@ -4063,15 +4726,29 @@
 
                         altura,
 
-                        edad
+                        edad,
+
+                        sexo,
+
+                        actividad,
+
+                        bmr
 
                     };
 
+
+                    /* =====================================================
+                    16. RECOMENDACIÓN SEGÚN OBJETIVO
+                    ===================================================== */
 
                     renderRecommendation(
                         objetivo
                     );
 
+
+                    /* =====================================================
+                    17. SCROLL AUTOMÁTICO AL RESULTADO
+                    ===================================================== */
 
                     const result =
                         $("resultado");
@@ -4083,8 +4760,13 @@
                             () => {
 
                                 result.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start"
+
+                                    behavior:
+                                        "smooth",
+
+                                    block:
+                                        "start"
+
                                 });
 
                             },
@@ -4397,6 +5079,23 @@
                         (event) => {
 
 
+                            const categoryButton =
+                                event.target.closest(
+                                    ".category-filter"
+                                );
+
+
+                            if (categoryButton) {
+
+                                filterProducts(
+                                    categoryButton.dataset.category
+                                );
+
+                                return;
+
+                            }
+
+
                             const addButton =
                                 event.target.closest(
                                     ".add-product-btn"
@@ -4555,14 +5254,17 @@
                 INICIALIZACIÓN
                 ========================================================= */
 
-                function init() {
+                async function init() {
 
                     products =
-                        loadProducts();
+                        await loadProducts();
 
 
                     cart =
                         loadCart();
+
+
+                    renderCategoryFilters();
 
 
                     renderProducts();
@@ -4590,44 +5292,44 @@
                 }
 
 
-                window.closeCart =
-                    closeCart;
+                    window.closeCart =
+                        closeCart;
 
-                window.toggleMobileMenu =
-                    toggleMobileMenu;
+                    window.toggleMobileMenu =
+                        toggleMobileMenu;
 
-                window.closeMobileMenu =
-                    closeMobileMenu;
+                    window.closeMobileMenu =
+                        closeMobileMenu;
 
-                window.calculateMacros =
-                    calculateMacros;
+                    window.calculateMacros =
+                        calculateMacros;
 
-                window.sendMacrosWhatsApp =
-                    sendMacrosWhatsApp;
+                    window.sendMacrosWhatsApp =
+                        sendMacrosWhatsApp;
 
-                window.renderProducts =
-                    renderProducts;
-
-
-                if (
-                    document.readyState ===
-                    "loading"
-                ) {
-
-                    document.addEventListener(
-                        "DOMContentLoaded",
-                        init,
-                        { once: true }
-                    );
-
-                } else {
-
-                    init();
-
-                }
+                    window.renderProducts =
+                        renderProducts;
 
 
-            })();
+                    if (
+                        document.readyState ===
+                        "loading"
+                    ) {
+
+                        document.addEventListener(
+                            "DOMContentLoaded",
+                            init,
+                            { once: true }
+                        );
+
+                    } else {
+
+                        init();
+
+                    }
+
+
+                })();
 
         </script>
 </body>
