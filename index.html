@@ -2672,7 +2672,9 @@
                             </a>
 
                         </div>
+
                     </div>
+
                 </div>
 
                 <!-- COPYRIGHT Y DESARROLLADOR -->
@@ -3104,35 +3106,193 @@
                     }
 
                 }
-                
-                function loadProducts() {
-                    const catalog = defaultProducts.map((product) => ({
-                        ...product,
-                        id: Number(product.id),
-                        precio: Number(product.precio) || 0,
-                        stock: Number(product.stock) || 0
-                    }));
+
+
+                async function loadProducts() {
 
                     try {
-                        localStorage.setItem(
-                            PRODUCTS_KEY,
-                            JSON.stringify(catalog)
+
+                        const response = await fetch(
+                            "http://localhost:3000/api/productos",
+                            {
+                                method: "GET",
+                                headers: {
+                                    "Accept": "application/json"
+                                },
+                                cache: "no-store"
+                            }
                         );
 
-                        localStorage.setItem(
-                            PRODUCTS_VERSION_KEY,
-                            PRODUCTS_VERSION
+                        if (!response.ok) {
+                            throw new Error(`Error HTTP ${response.status}`);
+                        }
+
+                        const apiProducts = await response.json();
+
+                        if (!Array.isArray(apiProducts)) {
+                            throw new Error(
+                                "La API no devolvió una lista de productos."
+                            );
+                        }
+
+                        console.log(
+                            "BACKEND DEVOLVIÓ:",
+                            apiProducts.length,
+                            "PRODUCTOS"
                         );
+
+                        console.log(
+                            "IDS RECIBIDOS:",
+                            apiProducts.map((producto) => producto.id)
+                        );
+
+                        /*
+                         * IMPORTANTE:
+                         * El catálogo visual se construye siempre a partir de
+                         * defaultProducts. Si el backend devuelve solo una
+                         * parte del catálogo, los productos restantes no
+                         * desaparecen de la tienda.
+                         *
+                         * Los datos que sí existen en el backend (precio,
+                         * nombre, stock, etc.) reemplazan los datos base.
+                         */
+                        const apiById = new Map(
+                            apiProducts.map((product) => [
+                                Number(product.id),
+                                product
+                            ])
+                        );
+
+                        const connectedProducts = defaultProducts.map(
+                            (original) => {
+
+                                const apiProduct = apiById.get(
+                                    Number(original.id)
+                                );
+
+                                if (!apiProduct) {
+                                    return {
+                                        ...original,
+                                        id: Number(original.id),
+                                        precio: Number(original.precio) || 0,
+                                        stock: Number(original.stock) || 0
+                                    };
+                                }
+
+                                return {
+                                    ...original,
+                                    ...apiProduct,
+                                    id: Number(apiProduct.id),
+                                    nombre:
+                                        apiProduct.nombre ?? original.nombre,
+                                    categoria:
+                                        apiProduct.categoria ?? original.categoria,
+                                    precio:
+                                        Number.isFinite(Number(apiProduct.precio))
+                                            ? Number(apiProduct.precio)
+                                            : Number(original.precio) || 0,
+                                    descripcion:
+                                        apiProduct.descripcion ??
+                                        original.descripcion ??
+                                        original.desc ??
+                                        "Producto disponible en Spartan Fitness.",
+                                    image:
+                                        apiProduct.image ?? original.image ?? "",
+                                    stock:
+                                        Number.isFinite(Number(apiProduct.stock))
+                                            ? Number(apiProduct.stock)
+                                            : Number(original.stock) || 0
+                                };
+                            }
+                        );
+
+                        console.log(
+                            "PRODUCTOS FINALES DEL FRONTEND:",
+                            connectedProducts.length
+                        );
+
+                        console.log(
+                            "IDS FINALES:",
+                            connectedProducts.map((producto) => producto.id)
+                        );
+
+                        try {
+                            localStorage.setItem(
+                                PRODUCTS_KEY,
+                                JSON.stringify(connectedProducts)
+                            );
+
+                            localStorage.setItem(
+                                PRODUCTS_VERSION_KEY,
+                                PRODUCTS_VERSION
+                            );
+                        } catch (storageError) {
+                            console.warn(
+                                "No se pudieron guardar los productos en localStorage.",
+                                storageError
+                            );
+                        }
+
+                        return connectedProducts;
+
                     } catch (error) {
-                        console.warn(
-                            "No se pudo guardar el catálogo actualizado.",
+
+                        console.error(
+                            "No se pudo conectar con el backend:",
                             error
                         );
+
+                        /*
+                         * Si el backend no está disponible, primero intentamos
+                         * recuperar el catálogo guardado. Si tampoco existe,
+                         * usamos el catálogo completo del frontend.
+                         */
+                        try {
+                            const savedProducts = JSON.parse(
+                                localStorage.getItem(PRODUCTS_KEY) || "null"
+                            );
+
+                            if (
+                                Array.isArray(savedProducts) &&
+                                savedProducts.length > 0
+                            ) {
+                                console.warn(
+                                    "Backend no disponible. Usando productos locales."
+                                );
+
+                                /*
+                                 * Combinamos lo guardado con el catálogo base
+                                 * para evitar que una versión antigua de
+                                 * localStorage deje solamente 3 productos.
+                                 */
+                                const savedById = new Map(
+                                    savedProducts.map((product) => [
+                                        Number(product.id),
+                                        product
+                                    ])
+                                );
+
+                                return defaultProducts.map((original) => ({
+                                    ...original,
+                                    ...(savedById.get(Number(original.id)) || {})
+                                }));
+                            }
+                        } catch (localError) {
+                            console.warn(
+                                "No se pudieron leer los productos locales.",
+                                localError
+                            );
+                        }
+
+                        console.warn(
+                            "Usando el catálogo completo del frontend."
+                        );
+
+                        return defaultProducts.map((product) => ({
+                            ...product
+                        }));
                     }
-
-                    return catalog;
                 }
-
 
                 function loadCart() {
 
