@@ -3175,7 +3175,13 @@
                                         ...original,
                                         id: Number(original.id),
                                         precio: Number(original.precio) || 0,
-                                        stock: Number(original.stock) || 0
+                                        stock: Number(original.stock) || 0,
+                                        image:
+                                            Number(original.id) === 13
+                                                ? "./imagenes/Omega_3_Onefit.webp"
+                                                : Number(original.id) === 15
+                                                    ? "./imagenes/Multivitaminico_Onefit.webp"
+                                                    : original.image
                                     };
                                 }
 
